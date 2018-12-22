@@ -2,7 +2,7 @@
 
 形態素解析結果のTokenベースの辞書でマッチするtextlintルール。
 
-[kuromoji.js(https://github.com/takuyaa/kuromoji.js)形態素解析のTokenを取得し、[morpheme-match-all](https://github.com/azu/morpheme-match-all)を使い辞書とTokenが一致しているかを判定しています。
+[kuromoji.js](https://github.com/takuyaa/kuromoji.js)形態素解析のTokenを取得し、[morpheme-match-all](https://github.com/azu/morpheme-match-all)を使い辞書とTokenが一致しているかを判定しています。
 
 - Tokenビューア: [morpheme-match](https://azu.github.io/morpheme-match/)
 - 利用しているライブラリ
