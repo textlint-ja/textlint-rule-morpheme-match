@@ -67,6 +67,14 @@ const reporter = (context, options) => {
 `)
     }
 
+    if (!Array.isArray(options.dictionaryPathList)) {
+        throw new Error(`"dictionaryPathList" option should be array.
+{ 
+    dictionaryPathList: ["./path/to/dictionary.js", "./path/to/dictionary.json"]
+}        
+`)
+    }
+
     const textlintRcDir = context.getConfigBaseDir() || process.cwd();
     const dictionaryList = loadDictionaries(textlintRcDir, options.dictionaryPathList);
     const matchAll = createMatchAll(dictionaryList);
