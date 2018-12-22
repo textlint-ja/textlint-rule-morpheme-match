@@ -1,4 +1,4 @@
-# @textlint-ja/textlint-rule-morpheme-match
+# @textlint-ja/textlint-rule-morpheme-match [![Build Status](https://travis-ci.org/textlint-ja/textlint-rule-morpheme-match.svg?branch=master)](https://travis-ci.org/textlint-ja/textlint-rule-morpheme-match)
 
 形態素解析結果のTokenベースの辞書でマッチするtextlintルール。
 
@@ -142,6 +142,11 @@ module.exports = [
     }
 ];
 ```
+
+## 参考
+
+- [azu/morpheme-match: match function that match token(形態素解析) with sentence.](https://github.com/azu/morpheme-match)
+- [azu/morpheme-match-all: A wrapper of morpheme-match API. Match all kuromoji's tokens.](https://github.com/azu/morpheme-match-all)
 
 ## Changelog
 
