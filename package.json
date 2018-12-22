@@ -1,6 +1,6 @@
 {
   "name": "@textlint-ja/textlint-rule-morpheme-match",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "形態素解析結果のTokenベースの辞書でマッチするtextlintルール",
   "keywords": [
     "textlintrule"
