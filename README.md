@@ -23,7 +23,7 @@ Via `.textlintrc`(Recommended)
 {
     "rules": {
         "@textlint-ja/morpheme-match": {
-            "dictionaryFilePathList": ["./path/to/dictionary.js"] 
+            "dictionaryPathList": ["./path/to/dictionary.js"] 
         }
     }
 }
@@ -31,7 +31,7 @@ Via `.textlintrc`(Recommended)
 
 ## Options
 
-- `dictionaryFilePathList`: `string[]`
+- `dictionaryPathList`: `string[]`
     - 辞書ファイルへのファイルパスの配列
     - 例) `/user/file/to/dict.js`, `~/download/dict.js`, `./path/to/dict.json` などのファイルパス形式に対応しています
     
