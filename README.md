@@ -2,12 +2,15 @@
 
 形態素解析結果のTokenベースの辞書でマッチするtextlintルール。
 
-[kuromoji.js](https://github.com/takuyaa/kuromoji.js)形態素解析のTokenを取得し、[morpheme-match-all](https://github.com/azu/morpheme-match-all)を使い辞書とTokenが一致しているかを判定しています。
+[kuromoji.js](https://github.com/takuyaa/kuromoji.js)形態素解析のTokenを取得し、[morpheme-match-textlint](https://github.com/azu/morpheme-match/tree/master/packages/morpheme-match-textlint)を使い辞書とTokenが一致しているかを判定しています。
+
+[textlint-rule-prh](https://github.com/textlint-rule/textlint-rule-prh)では正規表現のマッチができますが、品詞の一致などは見れません。
+`textlint-rule-morpheme-match`は日本語を単語レベルでの一致でチェックするルールです。
 
 - Tokenビューア: [morpheme-match](https://azu.github.io/morpheme-match/)
 - 利用しているライブラリ
     - [azu/morpheme-match: match function that match token(形態素解析) with sentence.](https://github.com/azu/morpheme-match)
-    - [azu/morpheme-match-all: A wrapper of morpheme-match API. Match all kuromoji's tokens.](https://github.com/azu/morpheme-match-all)
+    - [morpheme-match-textlint](https://github.com/azu/morpheme-match/tree/master/packages/morpheme-match-textlint)
 
 ## Install
 
