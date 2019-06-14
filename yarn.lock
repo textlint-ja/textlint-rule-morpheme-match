@@ -2315,15 +2315,24 @@ moment@^2.13.0:
   version "2.23.0"
   resolved "https://registry.npmjs.org/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
 
-morpheme-match-all@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/morpheme-match-all/-/morpheme-match-all-1.1.0.tgz#97f05382eb89e3755d50839d77f959c111eae43e"
+morpheme-match-all@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/morpheme-match-all/-/morpheme-match-all-2.0.0.tgz#fcf518ea2a1462bc99e7cfacee1ca47942b0fcd5"
+  integrity sha512-eiONyhZLP0bZuXFTaoqfxigXdg5XKd+vZLwaSKFRLAhvSHY5Zrbu8iJl74HqQj+gCm1OV18OocWCAfr3FXiFXg==
   dependencies:
-    morpheme-match "^1.1.0"
+    morpheme-match "^2.0.0"
 
-morpheme-match@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/morpheme-match/-/morpheme-match-1.1.0.tgz#d8f3330b95e5f27d1cb610f763285c724c25874a"
+morpheme-match-textlint@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/morpheme-match-textlint/-/morpheme-match-textlint-2.0.0.tgz#034f05dcfe7838286c675b4446f086698adb3188"
+  integrity sha512-6bMD5nDKPcxJ/Qd4Y1R9MwI8GQWnpFVFif8nwdRtzfibEo6FNkBRj98PzjEwXOefLMlnbjJ+DOpnPBE9yTWLqw==
+  dependencies:
+    morpheme-match-all "^2.0.0"
+
+morpheme-match@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/morpheme-match/-/morpheme-match-2.0.0.tgz#d95916683e119d916335ffe54e79dfb0b2ceee6a"
+  integrity sha512-6k8vkOliZVX4p3Ufknnlv+QshCRdkxc72b7MVq3Zo8l5dBVLuvM7L7VPnaQJwsWntI3xLLDzDLy84YMHrl35Qw==
 
 ms@2.0.0:
   version "2.0.0"

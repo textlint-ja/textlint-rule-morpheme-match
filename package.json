@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "kuromojin": "^1.4.0",
-    "morpheme-match-all": "^1.1.0",
+    "morpheme-match-textlint": "^2.0.0",
     "untildify": "^3.0.3"
   }
 }

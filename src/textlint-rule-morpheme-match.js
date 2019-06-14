@@ -1,6 +1,7 @@
 "use strict";
+import { createTextlintMatcher } from "morpheme-match-textlint";
+
 const tokenize = require("kuromojin").tokenize;
-const createMatchAll = require("morpheme-match-all");
 const path = require("path");
 const untildify = require("untildify");
 
@@ -64,7 +65,7 @@ const reporter = (context, options) => {
 { 
     dictionaryPathList: ["./path/to/dictionary.js", "./path/to/dictionary.json"]
 }        
-`)
+`);
     }
 
     if (!Array.isArray(options.dictionaryPathList)) {
@@ -72,46 +73,35 @@ const reporter = (context, options) => {
 { 
     dictionaryPathList: ["./path/to/dictionary.js", "./path/to/dictionary.json"]
 }        
-`)
+`);
     }
 
     const textlintRcDir = context.getConfigBaseDir() || process.cwd();
     const dictionaryList = loadDictionaries(textlintRcDir, options.dictionaryPathList);
-    const matchAll = createMatchAll(dictionaryList);
+    const matchAll = createTextlintMatcher({
+        tokenize: tokenize,
+        dictionaries: dictionaryList
+    });
     return {
         [Syntax.Str](node) {
             const text = getSource(node);
-            return tokenize(text).then(currentTokens => {
-                /**
-                 * @type {MatchResult[]}
-                 */
-                const matchResults = matchAll(currentTokens);
-                matchResults.forEach(matchResult => {
-                    const firstToken = matchResult.tokens[0];
-                    const lastToken = matchResult.tokens[matchResult.tokens.length - 1];
-                    const firstWordIndex = Math.max(firstToken.word_position - 1, 0);
-                    const lastWorkIndex = Math.max(lastToken.word_position - 1, 0);
-                    // replace $1
-                    const message = replaceWithCaptureTokens(matchResult.dict.message, matchResult.dict.tokens, matchResult.tokens);
-                    const expected = matchResult.dict.expected
-                                     ? replaceWithCaptureTokens(matchResult.dict.expected, matchResult.dict.tokens, matchResult.tokens)
-                                     : undefined;
-                    if (expected) {
-                        report(node, new RuleError(message, {
-                            index: firstWordIndex,
-                            fix: fixer.replaceTextRange([
-                                firstWordIndex, lastWorkIndex + lastToken.surface_form.length
-                            ], expected)
+            return matchAll(text).then(results => {
+                results.forEach(result => {
+                    if (result.expected) {
+                        report(node, new RuleError(result.message, {
+                            index: result.index,
+                            fix: fixer.replaceTextRange(result.range, result.expected)
                         }));
                     } else {
-                        report(node, new RuleError(message, {
-                            index: firstWordIndex
+                        report(node, new RuleError(result.message, {
+                            index: result.index
                         }));
                     }
+
                 });
             });
         }
-    }
+    };
 };
 module.exports = {
     linter: reporter,
