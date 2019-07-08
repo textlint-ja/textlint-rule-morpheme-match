@@ -1,7 +1,7 @@
-const path = require("path");
-const TextLintTester = require("textlint-tester");
+import TextLintTester from "textlint-tester";
+import path from "path";
 const tester = new TextLintTester();
-const rule = require("../src/textlint-rule-morpheme-match.js");
+const rule = require("../src/textlint-rule-morpheme-match");
 const options = {
     dictionaryPathList: [path.join(__dirname, "fixtures/dictionary.js")]
 };
