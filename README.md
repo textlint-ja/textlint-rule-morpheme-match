@@ -45,7 +45,7 @@ Via `.textlintrc`(Recommended)
 
 - `tokens`: マッチするTokenのパターンを配列で記述します
     - それぞれのTokenに記述しているプロパティの一致を見ます
-    - どのTokenでもいいワイルドカード的なものは`{}`からのオブジェクトを置くことで実現できます
+    - どのTokenでもいいワイルドカード的なものは`{}`(空のオブジェクト)を置くことで実現できます
     - Tokenについては[morpheme-match](https://azu.github.io/morpheme-match/)を参考にしてください
     - `_capture`というプロパティには、`surface_form`をキャプチャをする正規表現の変数を指定できます。
     - 記憶した変数は`message`で`$1`のように指定すると、メッセージを出すときに置換されます
