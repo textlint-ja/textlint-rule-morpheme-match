@@ -1,4 +1,4 @@
-# @textlint-ja/textlint-rule-morpheme-match [![Build Status](https://travis-ci.org/textlint-ja/textlint-rule-morpheme-match.svg?branch=master)](https://travis-ci.org/textlint-ja/textlint-rule-morpheme-match)
+# @textlint-ja/textlint-rule-morpheme-match [![Actions Status: test](https://github.com/textlint-ja/textlint-rule-morpheme-match/workflows/test/badge.svg)](https://github.com/textlint-ja/textlint-rule-morpheme-match/actions?query=workflow%3A"test")
 
 形態素解析結果のTokenベースの辞書でマッチするtextlintルール。
 
