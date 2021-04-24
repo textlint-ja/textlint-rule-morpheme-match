@@ -1,7 +1,9 @@
 import TextLintTester from "textlint-tester";
 import path from "path";
+
 const tester = new TextLintTester();
 import rule from "../src/textlint-rule-morpheme-match";
+
 const options = {
     dictionaryPathList: [path.join(__dirname, "fixtures/dictionary.js")]
 };
