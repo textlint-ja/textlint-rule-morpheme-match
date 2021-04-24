@@ -1,7 +1,7 @@
 import TextLintTester from "textlint-tester";
 import path from "path";
 const tester = new TextLintTester();
-const rule = require("../src/textlint-rule-morpheme-match");
+import rule from "../src/textlint-rule-morpheme-match";
 const options = {
     dictionaryPathList: [path.join(__dirname, "fixtures/dictionary.js")]
 };
@@ -14,7 +14,7 @@ tester.run("textlint-rule-ja-no-redundant-expression", rule, {
     valid: [
         { text: "text", options },
         { text: "長さは可変だ", options: multipleDictOptions },
-        { text: "人は1人では育つことができない", options },
+        { text: "人は1人では育つことができない", options }
     ],
     invalid: [
         {

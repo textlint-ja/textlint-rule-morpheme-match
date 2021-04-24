@@ -3,8 +3,7 @@ import { TextlintRuleModule, TextlintRuleReporter } from "@textlint/types";
 import { createTextlintMatcher } from "morpheme-match-textlint";
 import { tokenize } from "kuromojin";
 import path from "path";
-
-const untildify = require("untildify");
+import untildify from "untildify";
 
 const flat = <T>(array: T[]): T[] => {
     return array.reduce((total, item) => total.concat(item), [] as T[]);
@@ -84,7 +83,8 @@ const reporter: TextlintRuleReporter = (context, options = {}) => {
         }
     };
 };
-module.exports = {
+
+export default {
     linter: reporter,
     fixer: reporter
 } as TextlintRuleModule;
