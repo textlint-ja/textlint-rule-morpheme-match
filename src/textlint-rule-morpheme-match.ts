@@ -59,7 +59,8 @@ const reporter: TextlintRuleReporter = (context, options = {}) => {
     const textlintRcDir = context.getConfigBaseDir() || process.cwd();
     const dictionaryList = loadDictionaries(textlintRcDir, options.dictionaryPathList);
     const matchAll = createTextlintMatcher({
-        tokenize: tokenize,
+        // Copy the readonly array from kuromojin 3.1 into the mutable array that morpheme-match-textlint expects
+        tokenize: (text: string) => tokenize(text).then((tokens) => [...tokens]),
         dictionaries: dictionaryList
     });
     return {
